@@ -1,0 +1,16 @@
+/*-----------------------Type-------------------------------*/
+html {
+    font-family: sans-serif;
+    background-color: white;
+}
+
+body {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+footer{
+    
+}
