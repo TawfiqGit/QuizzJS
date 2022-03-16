@@ -1,35 +1,46 @@
-(function($) {
+//Date today 
+date = new Date();
+year = date.getFullYear();
+month = date.getMonth() + 1;
+day = date.getDate();
+document.getElementById("today").innerHTML = month + "/" + day + "/" + year;
 
-	/**
-	 * Generate an indented list of links from a nav. Meant for use with panel().
-	 * @return {jQuery} jQuery object.
-	 */
-	$.fn.navList = function() {
+//Hide menu
+let nDialog = document.getElementById("dialog-note")
+let closeDialog = document.getElementById("popup-close")
 
-		var	$this = $(this);
-			$a = $this.find('a'),
-			b = [];
+nDialog.style.display = 'none'
 
-		$a.each(function() {
+function isHideMenu(isHide){
+    if(isHide){
+        nDialog.style.display = 'none'
+    }else{
+        nDialog.style.display = 'block'
+    }
+};
 
-			var	$this = $(this),
-				indent = Math.max(0, $this.parents('li').length - 1),
-				href = $this.attr('href'),
-				target = $this.attr('target');
+function getResponse(){
+    var ele = document.getElementsByName("pays"); //Tableau name
+    console.log(ele.length);
+     
+    for(i = 0; i < ele.length; i++) {
+        console.log(ele[i].value);
+        
+        if(ele[i].checked){
+            document.getElementById("aze").innerHTML = calculTauxReussite() +"%";                
+        }
+    }
+}
 
-			b.push(
-				'<a ' +
-					'class="link depth-' + indent + '"' +
-					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
-					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +
-				'>' +
-					'<span class="indent-' + indent + '"></span>' +
-					$this.text() +
-				'</a>'
-			);
+//Listenner
+document.getElementById("buttonValid").addEventListener("click", getResponse);
 
-		});
+//Update progress 
+function calculTauxReussite() {
+    let nbRespEchec = 2;
+    let nbQuestion = 3;
+    return (nbRespEchec * nbQuestion)/100;
+}
 
-		return b.join('');
-
-	};
+let progress = document.getElementById("progress").value = "70"
+//var textProgress = document.getElementById("aze").innerText = calculTauxReussite() +"%"

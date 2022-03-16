@@ -1,8 +1,80 @@
 <html>
 	<head>
 		<meta charset="utf-8">  
-		<title>QUIZZ</title>
+		<title>Quizz</title>
 		<link rel="stylesheet" href="assets/css/design.css" />
 	</head>
 
+    <body>
+        <h1>Quizz</h1>
+
+        <div class="container-global">
+            <div class="icon-help">
+                
+                <h3 id="today"></h3>
+    
+                <img id="popup-note" src="images/notes.png" onclick="isHideMenu(false)">
+                <img id="popup-aide" src="images/aide.png" onclick="">
+                
+                <dialog id="dialog-note" class="popup">
+                    <div>
+                        <img id="popup-close" src="images/close.png" onclick="isHideMenu(true)">
+                        <h2>Tutorial</h2>
+                    </div>
+                    <p>Veuillez repondre a tous les question avant de validez</p>
+                </dialog>
+            </div>
+            
+            <form class="from-quizz" method="get">
+
+                <div class="question-block">
+                    <h4>Quelle est la date de la signature de l’armistice de la Première Guerre mondiale?</h4>
+                    <div>
+                        <input type="radio" id="date1" name="date" value="a">
+                        <label for="date1">1949</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="date2" name="date" value="b">
+                        <label for="date2">1939</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="date3" name="date" value="c">
+                        <label for="date3">1933</label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <h4>Parmi les pays suivants, lequel n’est pas membre de l’Union européenne ?</h4>
+                    <div>
+                        <input type="radio" id="py1" name="pays" value="a">
+                        <label for="py1">La Suède</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="py2" name="pays" value="b">
+                        <label for="py2">La Norvège</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="py3" name="pays" value="c">
+                        <label for="py3">La Finlande</label>
+                    </div>
+                </div>
+
+                <div id="align-horizontal">
+                    <button type="submit" id="buttonValid">Valider</button>
+                    <button type="reset" value="retour" >Retour</button>
+                </div>
+            </form>
+           
+            <div class="resultat">
+                
+                <h2 class="echec">Pourcentage de reussite : <span id="aze"></span></h2>
+                <progress id="progress" class ="progress-bar" max="100" value="0"></progress>
+           
+            </div>
+        </div>
+    </body>
+   
+    <!--JQuerry library-->
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" > </script> 
+    <script src="assets/js/utils.js"></script>
 </html>
