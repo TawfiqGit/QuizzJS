@@ -3,78 +3,135 @@
 		<meta charset="utf-8">  
 		<title>Quizz</title>
 		<link rel="stylesheet" href="assets/css/design.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 	</head>
 
     <body>
-        <h1>Quizz</h1>
+        <div class="container-title">
+            <h1>Quizz</h1>
+            <h2 id="theme"></h2>
 
-        <div class="container-global">
             <div class="icon-help">
-                
                 <h3 id="today"></h3>
-    
-                <img id="popup-note" src="images/notes.png" onclick="isHideMenu(false)">
+                <img id="popup-note" src="images/notes.png" onclick="isHidePopUp(false)">
                 <img id="popup-aide" src="images/aide.png" onclick="">
-                
+                    
                 <dialog id="dialog-note" class="popup">
                     <div>
-                        <img id="popup-close" src="images/close.png" onclick="isHideMenu(true)">
+                        <img id="popup-close" src="images/close.png" onclick="isHidePopUp(true)">
                         <h2>Tutorial</h2>
                     </div>
                     <p>Veuillez repondre a tous les question avant de validez</p>
                 </dialog>
             </div>
-            
-            <form class="from-quizz" method="get">
-
-                <div class="question-block">
-                    <h4>Quelle est la date de la signature de l’armistice de la Première Guerre mondiale?</h4>
-                    <div>
-                        <input type="radio" id="date1" name="date" value="a">
-                        <label for="date1">1949</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="date2" name="date" value="b">
-                        <label for="date2">1939</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="date3" name="date" value="c">
-                        <label for="date3">1933</label>
-                    </div>
-                </div>
-
-                <div class="question-block">
-                    <h4>Parmi les pays suivants, lequel n’est pas membre de l’Union européenne ?</h4>
-                    <div>
-                        <input type="radio" id="py1" name="pays" value="a">
-                        <label for="py1">La Suède</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="py2" name="pays" value="b">
-                        <label for="py2">La Norvège</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="py3" name="pays" value="c">
-                        <label for="py3">La Finlande</label>
-                    </div>
-                </div>
-
-                <div id="align-horizontal">
-                    <button type="submit" id="buttonValid">Valider</button>
-                    <button type="reset" value="retour" >Retour</button>
-                </div>
-            </form>
-           
-            <div class="resultat">
-                
-                <h2 class="echec">Pourcentage de reussite : <span id="aze"></span></h2>
-                <progress id="progress" class ="progress-bar" max="100" value="0"></progress>
-           
-            </div>
         </div>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper"> 
+                <div class="swiper-slide">
+                    <div class="container-child">
+                      
+                        <form class="from-quizz" method="get">
+                            <div class="question-block">
+                                <h4>Quelle est la date de la signature de l’armistice de la Première Guerre mondiale?</h4>
+                                <div>
+                                    <input type="radio" id="date1" name="date" value="a">
+                                    <label for="date1">1949</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="date2" name="date" value="b">
+                                    <label for="date2">1939</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="date3" name="date" value="c">
+                                    <label for="date3">1933</label>
+                                </div>
+                            </div>
+                
+                            <div class="question-block">
+                                <h4>Parmi les pays suivants, lequel n’est pas membre de l’Union européenne ?</h4>
+                                
+                                <div>
+                                    <input type="radio" id="py1" name="pays" value="a">
+                                    <label for="py1">La Suède</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="py2" name="pays" value="b">
+                                    <label for="py2">La Norvège</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="py3" name="pays" value="c">
+                                    <label for="py3">La Finlande</label>
+                                </div>
+                            </div>
+                        
+                            <div class="question-block">
+                                <h4>Dans quelle ville le Colisée (l'amphithéâtre Flavien) se trouve-t-il ?</h4>
+                                <div>
+                                    <input type="radio" id="v1" name="ville" value="a">
+                                    <label for="v1">Nîmes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="v2" name="ville" value="b">
+                                    <label for="v2">Venise</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="v3" name="ville" value="c">
+                                    <label for="v3">Rome</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="v4" name="ville" value="d">
+                                    <label for="v4">Barcelone</label>
+                                </div>
+                            </div>
+                
+                            <div class="question-block">
+                                <h4>Quel est l’album le plus vendu de l’histoire ?</h4>
+                                <div>
+                                    <input type="radio" id="a1" name="album" value="a">
+                                    <label for="a1">Their Greatest Hits des Eagles</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="a2" name="album" value="b">
+                                     <label for="a2">Back in Black des AC/DC</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="a3" name="album" value="c">
+                                    <label for="a3">Come on Over de Shania Twains</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="a4" name="album" value="d">
+                                    <label for="a4">Thriller de Michael Jackson</label>
+                                </div>
+                            </div>
+                
+                            <div id="align-horizontal">
+                                <button type="submit" id="buttonValid" onclick="launchValidateAnswer(4)">Valider</button>
+                                <button type="reset" value="retour" >Retour</button>
+                            </div>
+                        </form>
+                           
+                        <div class="resultat">
+                            <h2 class="echec">Pourcentage de reussite : <span id="taux"></span></h2>
+                            <progress id="progress" class ="progress-bar" max="100" value="0"></progress> 
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"> Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>      
     </body>
-   
-    <!--JQuerry library-->
+
+    <!--Library-->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" > </script> 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--JS-->
     <script src="assets/js/utils.js"></script>
+    <script src="assets/js/swiper.js"></script>
+
 </html>

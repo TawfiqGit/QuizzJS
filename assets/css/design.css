@@ -9,15 +9,6 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-h1{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: lighter;
-  letter-spacing: 15px;
-  text-align: center;
-  padding: 2%;
-  font-size: 40px;  
-}
-
 form button{
     border: none;
     outline: none;
@@ -37,10 +28,49 @@ form button:hover{
 
 /*-----------------------Class-------------------------------*/
 
-.container-global{
-    width: 70%;
-    max-width: 800px;
-    margin: 0 auto;
+.container-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.container-title h1{
+    letter-spacing: 15px;
+    padding: 2%;
+    font-size: 40px;  
+}  
+
+.container-title h2 {
+    letter-spacing: 7.5px;
+    margin-bottom: 1%;
+    margin-top: 0%;
+}
+
+.icon-help {
+    display: flex;
+    /* haut | droit | bas | gauche */
+    margin: 0 30% ;
+}
+
+.icon-help img{
+    flex: 1;
+    height: auto; 
+    width: auto; 
+    max-width: 40px; 
+    max-height: 40px;  
+}
+
+.icon-help h3 {
+    flex: 1;
+    text-align: start;
+    width: auto;
+    height: auto;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.container-child{
+    width: auto;
     height: auto;
 }
 
@@ -76,28 +106,8 @@ form button:hover{
     text-align: center;
 }
 
-.icon-help {
-    display: flex;
-}
-
-.icon-help img{
-    flex: 1;
-    height: auto; 
-    width: auto; 
-    max-width: 40px; 
-    max-height: 40px;  
-}
-
-.icon-help h3 {
-    flex: 1;
-    text-align: start;
-    width: auto;
-    height: auto;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
 .echec{
+    padding: 2%;
     animation: echec 0.3 ease-in-out;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
@@ -124,6 +134,39 @@ form button:hover{
     width: 100%;
 }
 
+.swiper {
+    width: 70%;
+    max-width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
 /*-----------------------ID-------------------------------*/
 
 #align-horizontal{
