@@ -65,7 +65,7 @@ function moveProgress(tauxReussite) {
         start = 1;
         let progress = document.getElementById("progress")
         var width = 1;
-        var idInterval= setInterval(moveInterval, 12); 
+        var idInterval= setInterval(moveInterval, 10); 
        
         function moveInterval(){
             if (width >= tauxReussite) {
